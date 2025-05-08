@@ -30,7 +30,7 @@ const handleClientError = (error: Prisma.PrismaClientKnownRequestError) => {
   return {
     statusCode,
     message,
-    errorMessages: errors,
+    errorDetails: errors,
   };
 };
 

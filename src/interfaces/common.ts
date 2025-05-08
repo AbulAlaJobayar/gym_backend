@@ -13,7 +13,7 @@ export type IGenericResponse<T> = {
 export type IGenericErrorResponse = {
   statusCode: number;
   message: string;
-  errorMessages: IGenericErrorMessage[];
+  errorDetails: IGenericErrorMessage[] | string ;
 };
 
 

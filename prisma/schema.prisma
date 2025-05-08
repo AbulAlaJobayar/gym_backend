@@ -13,9 +13,107 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
- model User {
-  id                 String     @id @default(uuid())
-  email              String     @unique
-  password           String
-  
- }
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      UserRole
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  admin     Admin?
+  trainer   Trainer?
+  trainee   Trainee?
+
+  @@map("users")
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  firstName String
+  lastName  String
+  email     String   @unique
+  user      User     @relation(fields: [email], references: [email])
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admins")
+}
+
+model Trainer {
+  id        String   @id @default(uuid())
+  firstName String
+  lastName  String
+  email     String   @unique
+  user      User     @relation(fields: [email], references: [email])
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  classes   Class[]
+
+  @@map("trainers")
+}
+
+model Trainee {
+  id        String    @id @default(uuid())
+  firstName String
+  lastName  String
+  email     String    @unique
+  user      User      @relation(fields: [email], references: [email])
+  isDeleted Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  bookings  Booking[]
+
+  @@map("trainees")
+}
+
+model Class {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  startTime   DateTime
+  endTime     DateTime
+  trainerId   String
+  trainer     Trainer   @relation(fields: [trainerId], references: [id])
+  maxTrainees Int       @default(10)
+  status      ClassStatus @default(ACTIVE)
+  bookings    Booking[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("classes")
+}
+
+model Booking {
+  id        String   @id @default(uuid())
+  status    BookingStatus @default(CONFIRMED)
+  classId   String
+  class     Class    @relation(fields: [classId], references: [id])
+  traineeId String
+  trainee   Trainee  @relation(fields: [traineeId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([classId, traineeId]) // Prevents duplicate bookings
+  @@map("bookings")
+}
+
+enum UserRole {
+  ADMIN
+  TRAINER
+  TRAINEE
+}
+
+enum ClassStatus {
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum BookingStatus {
+  CONFIRMED
+  CANCELLED
+  ATTENDED
+}
