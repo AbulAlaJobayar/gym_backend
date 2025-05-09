@@ -73,6 +73,7 @@ model Class {
   id          String      @id @default(uuid())
   title       String
   description String?
+  date        DateTime
   startTime   DateTime
   endTime     DateTime
   trainerId   String

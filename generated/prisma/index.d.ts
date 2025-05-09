@@ -59,7 +59,7 @@ export type UserRole = (typeof UserRole)[keyof typeof UserRole]
 
 export const ClassStatus: {
   ACTIVE: 'ACTIVE',
-  COMPLETED: 'COMPLETED',
+  FULL: 'FULL',
   CANCELLED: 'CANCELLED'
 };
 
@@ -5918,6 +5918,7 @@ export namespace Prisma {
     id: string | null
     title: string | null
     description: string | null
+    date: Date | null
     startTime: Date | null
     endTime: Date | null
     trainerId: string | null
@@ -5931,6 +5932,7 @@ export namespace Prisma {
     id: string | null
     title: string | null
     description: string | null
+    date: Date | null
     startTime: Date | null
     endTime: Date | null
     trainerId: string | null
@@ -5944,6 +5946,7 @@ export namespace Prisma {
     id: number
     title: number
     description: number
+    date: number
     startTime: number
     endTime: number
     trainerId: number
@@ -5967,6 +5970,7 @@ export namespace Prisma {
     id?: true
     title?: true
     description?: true
+    date?: true
     startTime?: true
     endTime?: true
     trainerId?: true
@@ -5980,6 +5984,7 @@ export namespace Prisma {
     id?: true
     title?: true
     description?: true
+    date?: true
     startTime?: true
     endTime?: true
     trainerId?: true
@@ -5993,6 +5998,7 @@ export namespace Prisma {
     id?: true
     title?: true
     description?: true
+    date?: true
     startTime?: true
     endTime?: true
     trainerId?: true
@@ -6093,6 +6099,7 @@ export namespace Prisma {
     id: string
     title: string
     description: string | null
+    date: Date
     startTime: Date
     endTime: Date
     trainerId: string
@@ -6125,6 +6132,7 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     description?: boolean
+    date?: boolean
     startTime?: boolean
     endTime?: boolean
     trainerId?: boolean
@@ -6141,6 +6149,7 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     description?: boolean
+    date?: boolean
     startTime?: boolean
     endTime?: boolean
     trainerId?: boolean
@@ -6155,6 +6164,7 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     description?: boolean
+    date?: boolean
     startTime?: boolean
     endTime?: boolean
     trainerId?: boolean
@@ -6169,6 +6179,7 @@ export namespace Prisma {
     id?: boolean
     title?: boolean
     description?: boolean
+    date?: boolean
     startTime?: boolean
     endTime?: boolean
     trainerId?: boolean
@@ -6178,7 +6189,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "startTime" | "endTime" | "trainerId" | "maxTrainees" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
+  export type ClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "date" | "startTime" | "endTime" | "trainerId" | "maxTrainees" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
   export type ClassInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     trainer?: boolean | TrainerDefaultArgs<ExtArgs>
     bookings?: boolean | Class$bookingsArgs<ExtArgs>
@@ -6201,6 +6212,7 @@ export namespace Prisma {
       id: string
       title: string
       description: string | null
+      date: Date
       startTime: Date
       endTime: Date
       trainerId: string
@@ -6636,6 +6648,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Class", 'String'>
     readonly title: FieldRef<"Class", 'String'>
     readonly description: FieldRef<"Class", 'String'>
+    readonly date: FieldRef<"Class", 'DateTime'>
     readonly startTime: FieldRef<"Class", 'DateTime'>
     readonly endTime: FieldRef<"Class", 'DateTime'>
     readonly trainerId: FieldRef<"Class", 'String'>
@@ -8229,6 +8242,7 @@ export namespace Prisma {
     id: 'id',
     title: 'title',
     description: 'description',
+    date: 'date',
     startTime: 'startTime',
     endTime: 'endTime',
     trainerId: 'trainerId',
@@ -8664,6 +8678,7 @@ export namespace Prisma {
     id?: StringFilter<"Class"> | string
     title?: StringFilter<"Class"> | string
     description?: StringNullableFilter<"Class"> | string | null
+    date?: DateTimeFilter<"Class"> | Date | string
     startTime?: DateTimeFilter<"Class"> | Date | string
     endTime?: DateTimeFilter<"Class"> | Date | string
     trainerId?: StringFilter<"Class"> | string
@@ -8679,6 +8694,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     description?: SortOrderInput | SortOrder
+    date?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
     trainerId?: SortOrder
@@ -8697,6 +8713,7 @@ export namespace Prisma {
     NOT?: ClassWhereInput | ClassWhereInput[]
     title?: StringFilter<"Class"> | string
     description?: StringNullableFilter<"Class"> | string | null
+    date?: DateTimeFilter<"Class"> | Date | string
     startTime?: DateTimeFilter<"Class"> | Date | string
     endTime?: DateTimeFilter<"Class"> | Date | string
     trainerId?: StringFilter<"Class"> | string
@@ -8712,6 +8729,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     description?: SortOrderInput | SortOrder
+    date?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
     trainerId?: SortOrder
@@ -8733,6 +8751,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Class"> | string
     title?: StringWithAggregatesFilter<"Class"> | string
     description?: StringNullableWithAggregatesFilter<"Class"> | string | null
+    date?: DateTimeWithAggregatesFilter<"Class"> | Date | string
     startTime?: DateTimeWithAggregatesFilter<"Class"> | Date | string
     endTime?: DateTimeWithAggregatesFilter<"Class"> | Date | string
     trainerId?: StringWithAggregatesFilter<"Class"> | string
@@ -9100,6 +9119,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     maxTrainees?: number
@@ -9114,6 +9134,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     trainerId: string
@@ -9128,6 +9149,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     maxTrainees?: IntFieldUpdateOperationsInput | number
@@ -9142,6 +9164,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     trainerId?: StringFieldUpdateOperationsInput | string
@@ -9156,6 +9179,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     trainerId: string
@@ -9169,6 +9193,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     maxTrainees?: IntFieldUpdateOperationsInput | number
@@ -9181,6 +9206,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     trainerId?: StringFieldUpdateOperationsInput | string
@@ -9543,6 +9569,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     description?: SortOrder
+    date?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
     trainerId?: SortOrder
@@ -9560,6 +9587,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     description?: SortOrder
+    date?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
     trainerId?: SortOrder
@@ -9573,6 +9601,7 @@ export namespace Prisma {
     id?: SortOrder
     title?: SortOrder
     description?: SortOrder
+    date?: SortOrder
     startTime?: SortOrder
     endTime?: SortOrder
     trainerId?: SortOrder
@@ -10486,6 +10515,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     maxTrainees?: number
@@ -10499,6 +10529,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     maxTrainees?: number
@@ -10574,6 +10605,7 @@ export namespace Prisma {
     id?: StringFilter<"Class"> | string
     title?: StringFilter<"Class"> | string
     description?: StringNullableFilter<"Class"> | string | null
+    date?: DateTimeFilter<"Class"> | Date | string
     startTime?: DateTimeFilter<"Class"> | Date | string
     endTime?: DateTimeFilter<"Class"> | Date | string
     trainerId?: StringFilter<"Class"> | string
@@ -10799,6 +10831,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     maxTrainees?: number
@@ -10812,6 +10845,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     trainerId: string
@@ -10866,6 +10900,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     maxTrainees?: IntFieldUpdateOperationsInput | number
@@ -10879,6 +10914,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     trainerId?: StringFieldUpdateOperationsInput | string
@@ -10923,6 +10959,7 @@ export namespace Prisma {
     id?: string
     title: string
     description?: string | null
+    date: Date | string
     startTime: Date | string
     endTime: Date | string
     maxTrainees?: number
@@ -10935,6 +10972,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     maxTrainees?: IntFieldUpdateOperationsInput | number
@@ -10948,6 +10986,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     maxTrainees?: IntFieldUpdateOperationsInput | number
@@ -10961,6 +11000,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    date?: DateTimeFieldUpdateOperationsInput | Date | string
     startTime?: DateTimeFieldUpdateOperationsInput | Date | string
     endTime?: DateTimeFieldUpdateOperationsInput | Date | string
     maxTrainees?: IntFieldUpdateOperationsInput | number

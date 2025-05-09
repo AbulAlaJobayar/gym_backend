@@ -70,33 +70,38 @@ model Trainee {
 }
 
 model Class {
-  id          String    @id @default(uuid())
+  id          String      @id @default(uuid())
   title       String
   description String?
+  date        DateTime
   startTime   DateTime
   endTime     DateTime
   trainerId   String
-  trainer     Trainer   @relation(fields: [trainerId], references: [id])
-  maxTrainees Int       @default(10)
+  trainer     Trainer     @relation(fields: [trainerId], references: [id])
+  maxTrainees Int         @default(10)
   status      ClassStatus @default(ACTIVE)
   bookings    Booking[]
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 
+  @@index([trainerId])
+  @@index([date])
   @@map("classes")
 }
 
 model Booking {
-  id        String   @id @default(uuid())
+  id        String        @id @default(uuid())
   status    BookingStatus @default(CONFIRMED)
   classId   String
-  class     Class    @relation(fields: [classId], references: [id])
+  class     Class         @relation(fields: [classId], references: [id])
   traineeId String
-  trainee   Trainee  @relation(fields: [traineeId], references: [id])
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  trainee   Trainee       @relation(fields: [traineeId], references: [id])
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
 
-  @@unique([classId, traineeId]) // Prevents duplicate bookings
+  @@unique([classId, traineeId])
+  @@index([classId])
+  @@index([traineeId])
   @@map("bookings")
 }
 
@@ -108,7 +113,7 @@ enum UserRole {
 
 enum ClassStatus {
   ACTIVE
-  COMPLETED
+  FULL
   CANCELLED
 }
 

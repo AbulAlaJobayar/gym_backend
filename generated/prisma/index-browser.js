@@ -163,6 +163,7 @@ exports.Prisma.ClassScalarFieldEnum = {
   id: 'id',
   title: 'title',
   description: 'description',
+  date: 'date',
   startTime: 'startTime',
   endTime: 'endTime',
   trainerId: 'trainerId',
@@ -203,7 +204,7 @@ exports.UserRole = exports.$Enums.UserRole = {
 
 exports.ClassStatus = exports.$Enums.ClassStatus = {
   ACTIVE: 'ACTIVE',
-  COMPLETED: 'COMPLETED',
+  FULL: 'FULL',
   CANCELLED: 'CANCELLED'
 };
 
