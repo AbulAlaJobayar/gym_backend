@@ -2,6 +2,12 @@
 
 A complete backend system for managing gym class scheduling, trainer assignments, and trainee bookings with robust authentication and business rule enforcement.
 
+## Important Link
+- **Live Link**: https://gymbackend-pi.vercel.app
+- **Postman Documentation**: https://documenter.getpostman.com/view/20207336/2sB2j98UUr
+-**ER Diagram Link**: https://drive.google.com/file/d/1BZCunAjsPcr_Dkc-KaiQQTNCrsgFpSE5/view?usp=sharing
+
+
 ## Features
 
 - **Role-Based Access Control**: Admin, Trainer, and Trainee roles
@@ -28,7 +34,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 ### Infrastructure
 
-- **Hosting**Vercel
+- **Hosting** Vercel
 
 ## Prerequisites
 
@@ -41,8 +47,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/gym-management-system.git
-   cd gym-management-system
+   git clone https://github.com/AbulAlaJobayar/gym_backend.git
    ```
 2. **Install dependencies:**:
    ```
@@ -75,5 +80,6 @@ yarn run dev
 
 **Contact**
 Abul Ala Jobayar - abulalajobayar@gmail.com
+01928210545(whatsapp)
 
-Project Link: https://github.com/yourusername/gym-management-system
+website: https://portfolio-rose-theta-63.vercel.app
