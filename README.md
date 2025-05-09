@@ -7,6 +7,12 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - **Postman Documentation**: https://documenter.getpostman.com/view/20207336/2sB2j98UUr
 - **ER Diagram Link**: https://drive.google.com/file/d/1BZCunAjsPcr_Dkc-KaiQQTNCrsgFpSE5/view?usp=sharing
 
+## credential
+- **admin credential**
+```
+email:abulalajobayar@gmail.com
+password:12345
+```
 
 ## Features
 
