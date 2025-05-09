@@ -13,7 +13,6 @@ import {
 import prisma from '../../../shared/prisma';
 import { AuthUtils } from './auth.utils';
 
-
 const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   const { email, password } = payload;
 
@@ -54,7 +53,6 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
 };
 
 const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
-
   let verifiedToken = null;
   try {
     verifiedToken = jwtHelpers.verifyToken(
@@ -69,7 +67,7 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
 
   const isUserExist = await prisma.user.findUnique({
     where: {
-      id: userId
+      id: userId,
     },
   });
   if (!isUserExist) {
@@ -89,8 +87,6 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
     accessToken: newAccessToken,
   };
 };
-
-
 
 export const AuthService = {
   loginUser,

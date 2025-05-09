@@ -133,23 +133,23 @@ const createTraineeIntoDB = async (req: Request) => {
 
   return result;
 };
-const getAllTrainersFromDB=async()=>{
-    const trainers = await prisma.trainer.findMany({
-        include: {
-        user: {
-            select: {
-            email: true,
-            role: true,
-            },
+const getAllTrainersFromDB = async () => {
+  const trainers = await prisma.trainer.findMany({
+    include: {
+      user: {
+        select: {
+          email: true,
+          role: true,
         },
-        },
-    });
-    return trainers;
-}
+      },
+    },
+  });
+  return trainers;
+};
 
 export const UserServices = {
   createAdminIntoDB,
   createTrainerIntoDB,
   createTraineeIntoDB,
-  getAllTrainersFromDB
+  getAllTrainersFromDB,
 };

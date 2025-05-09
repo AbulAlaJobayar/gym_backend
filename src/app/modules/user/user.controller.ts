@@ -47,5 +47,5 @@ export const UserController = {
   createAdminIntoDB,
   createTrainerIntoDB,
   createTraineeIntoDB,
-  getAllTrainersFromDB
+  getAllTrainersFromDB,
 };

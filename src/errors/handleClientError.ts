@@ -1,29 +1,28 @@
-import { Prisma } from '@prisma/client';
 import { IGenericErrorMessage } from '../interfaces/error';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
-const handleClientError = (error: Prisma.PrismaClientKnownRequestError) => {
+const handleClientError = (error: PrismaClientKnownRequestError) => {
   let errors: IGenericErrorMessage[] = [];
-  let message = ""
+  let message = '';
   const statusCode = 400;
 
   if (error.code === 'P2025') {
-    message = (error.meta?.cause as string) || "Record not found!"
+    message = (error.meta?.cause as string) || 'Record not found!';
     errors = [
       {
-        path: "",
-        message
-      }
-    ]
-  }
-  else if (error.code === 'P2003') {
+        field: '',
+        message,
+      },
+    ];
+  } else if (error.code === 'P2003') {
     if (error.message.includes('delete()` invocation:')) {
-      message = "Delete failed"
+      message = 'Delete failed';
       errors = [
         {
-          path: "",
-          message
-        }
-      ]
+          field: '',
+          message,
+        },
+      ];
     }
   }
 

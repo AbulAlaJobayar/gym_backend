@@ -1,12 +1,7 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
-const envPath =
-  process.env.NODE_ENV === 'production'
-    ? path.join(process.cwd(), '.env.prod')
-    : path.join(process.cwd(), '.env');
-
-dotenv.config({ path: envPath });
+dotenv.config({path:path.join(process.cwd(),'.env')});
 
 export default {
   env: process.env.NODE_ENV,
@@ -18,7 +13,6 @@ export default {
     refresh_secret: process.env.REFRESH_SECRET,
     refresh_expires_in: process.env.REFRESH_EXPIRES_IN,
   },
-  
+
   bcrypt_salt_rounds: process.env.SALT_ROUND,
-  
 };

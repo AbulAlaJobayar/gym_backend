@@ -11,16 +11,19 @@ const auth =
     try {
       //get authorization token
       const token = req.headers.authorization;
-   
+
       if (!token) {
-        throw new ApiError(httpStatus.UNAUTHORIZED, 'Unauthorized access',"You must be an admin to perform this action");
+        throw new ApiError(
+          httpStatus.UNAUTHORIZED,
+          'Unauthorized access',
+          'You must be an admin to perform this action',
+        );
       }
       // verify token
       let verifiedUser = null;
       verifiedUser = jwtHelpers.verifyToken(token, config.jwt.secret as Secret);
       req.user = verifiedUser; // role  , userid
 
-   
       if (requiredRoles.length && !requiredRoles.includes(verifiedUser.role)) {
         throw new ApiError(httpStatus.FORBIDDEN, 'Forbidden');
       }

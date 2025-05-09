@@ -7,26 +7,24 @@ import ApiError from '../../errors/ApiError';
 import handleValidationError from '../../errors/handleValidationError';
 
 import { Prisma } from '@prisma/client';
-import { PrismaClientKnownRequestError, PrismaClientValidationError } from '@prisma/client/runtime/library';
+import {
+  PrismaClientKnownRequestError,
+  PrismaClientValidationError,
+} from '@prisma/client/runtime/library';
 import { ZodError } from 'zod';
 import handleClientError from '../../errors/handleClientError';
 import handleZodError from '../../errors/handleZodError';
 import { IGenericErrorMessage } from '../../interfaces/error';
 
-
 const globalErrorHandler: ErrorRequestHandler = (
   error,
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
-  
-  console.log(`🐱globalErrorHandler ~~`, { error })
-   
-
   let statusCode = 500;
   let message = 'Something went wrong !';
-  let errorDetails: IGenericErrorMessage[]| string = [];
+  let errorDetails: IGenericErrorMessage[] | string = [];
 
   if (error instanceof PrismaClientValidationError) {
     const simplifiedError = handleValidationError(error);
@@ -46,22 +44,23 @@ const globalErrorHandler: ErrorRequestHandler = (
   } else if (error instanceof ApiError) {
     statusCode = error?.statusCode;
     message = error.message;
-    errorDetails = error?.errorDetails?error?.errorDetails:[
-        {
-          field: '',
-          message: error?.message,
-        },
-      ]
-      ;
+    errorDetails = error?.errorDetails
+      ? error?.errorDetails
+      : [
+          {
+            field: '',
+            message: error?.message,
+          },
+        ];
   } else if (error instanceof Error) {
     message = error?.message;
     errorDetails = error?.message
       ? [
-        {
-          field: '',
-          message: error?.message,
-        },
-      ]
+          {
+            field: '',
+            message: error?.message,
+          },
+        ]
       : [];
   }
 

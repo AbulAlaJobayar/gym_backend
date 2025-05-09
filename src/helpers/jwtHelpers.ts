@@ -8,7 +8,7 @@ const createToken = (
   return jwt.sign(payload, secret, {
     algorithm: 'HS256',
     expiresIn: expireTime,
-  });
+  } as jwt.SignOptions);
 };
 
 const verifyToken = (token: string, secret: Secret): JwtPayload => {

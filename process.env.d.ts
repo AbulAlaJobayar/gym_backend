@@ -8,6 +8,6 @@ declare namespace NodeJS {
     EXPIRES_IN: string;
     REFRESH_SECRET: string;
     REFRESH_EXPIRES_IN: string;
-    SALT_ROUND:string
+    SALT_ROUND: string;
   };
 }

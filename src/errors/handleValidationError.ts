@@ -3,12 +3,14 @@ import { IGenericErrorResponse } from '../interfaces/common';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library';
 
 const handleValidationError = (
-  error: PrismaClientValidationError
+  error: PrismaClientValidationError,
 ): IGenericErrorResponse => {
-  const errors = [{
-    field: "",
-    message: error.message,
-  }]
+  const errors = [
+    {
+      field: '',
+      message: error.message,
+    },
+  ];
   const statusCode = 400;
   return {
     statusCode,

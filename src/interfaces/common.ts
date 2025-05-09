@@ -13,12 +13,11 @@ export type IGenericResponse<T> = {
 export type IGenericErrorResponse = {
   statusCode: number;
   message: string;
-  errorDetails: IGenericErrorMessage[] | string ;
+  errorDetails: IGenericErrorMessage[] | string;
 };
-
 
 export type IAuthUser = {
   userId: string;
-  role: ENUM_USER_ROLE,
-  email: string
-} | null
+  role: ENUM_USER_ROLE;
+  email: string;
+} | null;

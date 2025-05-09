@@ -12,4 +12,15 @@ router.post(
   validateRequest(BookingValidation.createBookingValidation),
   BookingController.createBookingIntoDB,
 );
+router.get(
+  '/all-booking',
+  auth(ENUM_USER_ROLE.TRAINEE),
+  BookingController.getBookingFromTrainee,
+);
+router.post(
+  '/cancel-booking',
+  auth(ENUM_USER_ROLE.TRAINEE),
+  BookingController.cancelBookingFromDB,
+);
+
 export const BookingRoutes = router;
