@@ -793,7 +793,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 #### class details
 
 ```http
-  POST https://gymbackend-pi.vercel.app/api/v1/class/classes/61efa740-4763-4024-b739-346e615abe52
+  GET https://gymbackend-pi.vercel.app/api/v1/class/classes/61efa740-4763-4024-b739-346e615abe52
 
 ```
 
