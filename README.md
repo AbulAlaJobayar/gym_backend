@@ -250,7 +250,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 ### Class Routes
 
-#### Class Routes
+#### create Routes
 
 ```http
   POST https://gymbackend-pi.vercel.app/api/v1/class/create-classes
