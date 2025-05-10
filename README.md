@@ -73,8 +73,9 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
    {
-    "statusCode": 201,
+    
     "success": true,
+    "statusCode": 201,
     "message": "Trainer created successfully",
     "data": {
         "id": "e8bee46a-7456-40fb-a232-be5483a52809",
@@ -116,8 +117,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 
 {
-    "statusCode": 201,
     "success": true,
+    "statusCode": 201,
     "message": "Trainee created successfully",
     "data": {
         "id": "415ad20f-1472-404f-919d-53075bfb5847",
@@ -151,8 +152,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
   {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "Trainee retrieved successfully",
     "data": [
         {
@@ -237,8 +238,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 
 {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "User logged in successfully !",
     "data": {
         "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ZWZjMjBkOS1iOTViLTRjMzItYjM4Zi00NjE5NDQ0Mzc1YWIiLCJyb2xlIjoiVFJBSU5FRSIsImVtYWlsIjoiam9ieWFyMTIzNDVAZ21haWwuY29tIiwiaWF0IjoxNzQ2ODE2MjM1LCJleHAiOjE3NDk0MDgyMzV9.KcU4O_kFh_f6A_A96U1oWxPC70de8qLuOqnBlyy7ssY"
@@ -281,8 +282,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
    {
-    "statusCode": 201,
     "success": true,
+    "statusCode": 201,
     "message": "Class Created successfully",
     "data": {
         "id": "61efa740-4763-4024-b739-346e615abe52",
@@ -353,8 +354,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
   {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "Class Retrieved successfully",
     "data": [
         {
@@ -496,8 +497,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
   {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "Class Retrieved successfully",
     "meta": {
         "total": 9,
@@ -807,8 +808,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
    {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "Class Retrieved successfully",
     "data": {
         "id": "61efa740-4763-4024-b739-346e615abe52",
@@ -871,8 +872,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 ```http
 {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "Class Updated successfully",
     "data": {
         "id": "9b9d1ade-32b0-4ddf-b4b0-ee5aaf1ffef0",
@@ -907,8 +908,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 ```http
 {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "Available Class retrieved successfully",
     "data": [
         {
@@ -1036,8 +1037,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 ```http
 {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "Class Deleted successfully",
     "data": {
         "id": "0f1f78b4-ea8f-40c3-9349-64f1fa69cb4a",
@@ -1104,8 +1105,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
    {
-    "statusCode": 201,
     "success": true,
+    "statusCode": 201,
     "message": "Booking created successfully",
     "data": {
         "id": "11e21f9f-217d-41de-832a-dffa36a097b3",
@@ -1157,8 +1158,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
  {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "All Booking From Trainee ",
     "data": [
         {
@@ -1258,8 +1259,8 @@ A complete backend system for managing gym class scheduling, trainer assignments
 ```http
 
   {
-    "statusCode": 200,
     "success": true,
+    "statusCode": 200,
     "message": "cancel booking From Trainee ",
     "data": {
         "id": "11e21f9f-217d-41de-832a-dffa36a097b3",
