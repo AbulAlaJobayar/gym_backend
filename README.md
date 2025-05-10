@@ -19,26 +19,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 - **Live Link**: https://gymbackend-pi.vercel.app
 - **Postman Documentation**: https://documenter.getpostman.com/view/20207336/2sB2j98UUr
-
-## 📌 Table of Contents
-
-- [Relational Diagram](#relational-diagram)
-- [Technology Stack](#technology-stack)
-- [API Endpoints](#api-endpoints)
-- [Database Schema](#database-schema)
-- [Admin Credentials](#admin-credentials)
-- [Testing Instructions](#testing-instructions)
-- [Instructions to Run Locally](#instructions-to-run-locally)
-- [Live Hosting Links](#live-hosting-links)
-- [Contact](#contact)
-
----
-
-## 🔗 Relational Diagram
-
-![ER Diagram](https://drive.google.com/file/d/1BZCunAjsPcr_Dkc-KaiQQTNCrsgFpSE5/view?usp=sharing)
-
----
+- **ER Diagram**: https://drive.google.com/file/d/1BZCunAjsPcr_Dkc-KaiQQTNCrsgFpSE5/view?usp=sharing
 
 ## 🛠️ Technology Stack
 
