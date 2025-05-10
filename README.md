@@ -29,7 +29,6 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - **ORM**: Prisma
 - **Database**: PostgreSQL
 - **Authentication**: JWT
-- **Authentication**: JWT
 - **Input Validation**: zod
 - **Documentation**: POSTMAN ([postman](https://documenter.getpostman.com/view/20207336/2sB2j98UUr))
 
@@ -60,19 +59,19 @@ A complete backend system for managing gym class scheduling, trainer assignments
 
 ```http
 {
-   {
+   
     "firstName": "Abul Ala",
     "lastName": "Jobayar",
     "email": "abulalajobssssbxb@gmail.com",
     "password": "12345"
-}
+
 }
 ```
 
 - Response:
 
 ```http
-{
+
    {
     "statusCode": 201,
     "success": true,
@@ -88,7 +87,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "role": "TRAINER"
     }
 }
-}
+
 ```
 
 #### create Trainee
@@ -101,20 +100,20 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Request Body:
 
 ```http
-{
+
    {
     "firstName": "Abul Ala",
     "lastName": "Jobayar",
     "email": "abulalajobssssbxb@gmail.com",
     "password": "12345"
 }
-}
+
 ```
 
 - Response:
 
 ```http
-{
+
 
 {
     "statusCode": 201,
@@ -131,7 +130,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "role": "TRAINEE"
     }
 }
-}
+
 ```
 
 #### All Trainer
@@ -150,7 +149,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Response:
 
 ```http
-{
+
   {
     "statusCode": 200,
     "success": true,
@@ -210,7 +209,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 ### Auth Routes
@@ -224,18 +223,18 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Request Body:
 
 ```http
-{
+
   {
     "email": "abulalajobssss@gmail.com",
     "password": "12345"
 }
-}
+
 ```
 
 - Response:
 
 ```http
-{
+
 
 {
     "statusCode": 200,
@@ -245,7 +244,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ZWZjMjBkOS1iOTViLTRjMzItYjM4Zi00NjE5NDQ0Mzc1YWIiLCJyb2xlIjoiVFJBSU5FRSIsImVtYWlsIjoiam9ieWFyMTIzNDVAZ21haWwuY29tIiwiaWF0IjoxNzQ2ODE2MjM1LCJleHAiOjE3NDk0MDgyMzV9.KcU4O_kFh_f6A_A96U1oWxPC70de8qLuOqnBlyy7ssY"
     }
 }
-}
+
 ```
 
 ### Class Routes
@@ -266,7 +265,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Request Body:
 
 ```http
-{
+
  {
   "trainerId": "75929507-f2ed-4504-aafa-77d52265dbac",
   "title": "Morning Strength Training",
@@ -274,13 +273,13 @@ A complete backend system for managing gym class scheduling, trainer assignments
   "date": "2025-05-16",
   "startTime": "07:00 AM"
 }
-}
+
 ```
 
 - Response:
 
 ```http
-{
+
    {
     "statusCode": 201,
     "success": true,
@@ -299,13 +298,13 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "updatedAt": "2025-05-09T18:28:33.739Z"
     }
 }
-}
+
 ```
 
 - Error Response:
 
 ```http
-{
+
    {
     "success": false,
     "message": "Trainer already has a class during 09:00 PM - 11:00 PM",
@@ -316,13 +315,13 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 - Error Response:
 
 ```http
-{
+
   {
     "success": false,
     "message": "Maximum of 5 classes per day reached.",
@@ -333,7 +332,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 #### Trainer classes
@@ -352,7 +351,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Response:
 
 ```http
-{
+
   {
     "statusCode": 200,
     "success": true,
@@ -477,7 +476,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 #### All classes
@@ -495,7 +494,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Response:
 
 ```http
-{
+
   {
     "statusCode": 200,
     "success": true,
@@ -787,7 +786,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 #### class details
@@ -806,7 +805,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Response:
 
 ```http
-{
+
    {
     "statusCode": 200,
     "success": true,
@@ -842,7 +841,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "updatedAt": "2025-05-09T18:28:33.739Z"
     }
 }
-}
+
 ```
 
 #### update Class
@@ -860,18 +859,18 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Request Body:
 
 ```http
-{
+
   {
    "title": "Training",
     "description": "A two-hour class focused "
 }
-}
+
 ```
 
 - Response:
 
 ```http
-{{
+{
     "statusCode": 200,
     "success": true,
     "message": "Class Updated successfully",
@@ -889,7 +888,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "updatedAt": "2025-05-09T18:51:40.531Z"
     }
 }
-}
+
 ```
 
 #### Available Class
@@ -907,7 +906,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Response:
 
 ```http
-{{
+{
     "statusCode": 200,
     "success": true,
     "message": "Available Class retrieved successfully",
@@ -1018,7 +1017,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 #### Delete Class
@@ -1036,7 +1035,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Response:
 
 ```http
-{{
+{
     "statusCode": 200,
     "success": true,
     "message": "Class Deleted successfully",
@@ -1054,13 +1053,13 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "updatedAt": "2025-05-09T04:47:40.434Z"
     }
 }
-}
+
 ```
 
 - Error Response:
 
 ```http
-{{
+{
     "success": false,
     "message": "Cannot delete class with enrolled students",
     "errorDetails": [
@@ -1070,7 +1069,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
        |
@@ -1093,17 +1092,17 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Request Body:
 
 ```http
-{
+
    {
   "classId": "61efa740-4763-4024-b739-346e615abe52"
 }
-}
+
 ```
 
 - Response:
 
 ```http
-{
+
    {
     "statusCode": 201,
     "success": true,
@@ -1137,7 +1136,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     }
 }
-}
+
 ```
 
 #### trainee Booking
@@ -1156,7 +1155,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Response:
 
 ```http
-{
+
  {
     "statusCode": 200,
     "success": true,
@@ -1228,7 +1227,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 #### cancel Booking
@@ -1247,17 +1246,17 @@ A complete backend system for managing gym class scheduling, trainer assignments
 - Request Body:
 
 ```http
-{
+
    {
     "bookingId":"11e21f9f-217d-41de-832a-dffa36a097b3"
 }
-}
+
 ```
 
 - Response:
 
 ```http
-{
+
   {
     "statusCode": 200,
     "success": true,
@@ -1271,13 +1270,13 @@ A complete backend system for managing gym class scheduling, trainer assignments
         "updatedAt": "2025-05-09T18:36:28.406Z"
     }
 }
-}
+
 ```
 
 -error Response:
 
 ```http
-{
+
   {
     "success": false,
     "message": "You can only cancel your own bookings",
@@ -1288,13 +1287,13 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 -error Response:
 
 ```http
-{
+
   {
     "success": false,
     "message": "Cancellations must be made at least 24 hours before class",
@@ -1305,7 +1304,7 @@ A complete backend system for managing gym class scheduling, trainer assignments
         }
     ]
 }
-}
+
 ```
 
 ## 🧬 Database Schema
