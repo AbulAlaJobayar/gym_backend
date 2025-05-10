@@ -6,5 +6,6 @@ node_modules
 dist
 dump
 generated
+README
 
 .vercel
