@@ -1469,34 +1469,6 @@ enum ClassStatus {
 
 ---
 
-## 🧪 Testing Instructions
-
-1. **Login as Admin**
-
-   - Go to `/login`
-   - Use admin credentials from above
-
-2. **Create Trainers**
-
-   - Go to `Admin Panel > Users`
-   - Create a new trainer account
-
-3. **Schedule Classes**
-
-   - Navigate to `Admin Panel > Classes`
-   - Add new class with proper time, trainer, and date
-
-4. **Book a Class**
-
-   - Register and login as a user
-   - Browse available classes and click "Book"
-
-5. **Check Bookings**
-   - Go to `My Bookings` (User)
-   - Go to `Class Bookings` (Trainer)
-
----
-
 ## 💻 Instructions to Run Locally
 
 ## Installation
